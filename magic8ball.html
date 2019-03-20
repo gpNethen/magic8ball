@@ -1,0 +1,37 @@
+<!doctype html>
+<!-- /export/home/cs200/cs200139/Documents/labs/lab6/magic.html        -->
+<!-- Nathan Reichert                                                   -->
+<!-- Section 4                                                         -->
+<!-- Created 10/23/2013                                                -->
+<!-- Last Edited 10/23/2013                                            -->
+<!-- The purpose of this page is to demonstrate usefulness             -->
+<!-- Of user defined functions to perform functions from a library     -->
+<!-- Using randomness.                                                 -->
+<!-- ================================================================= -->
+<html>
+	<head>
+		<title>Magic 8-Ball of Wisdom</title>
+		<script type="text/javascript" src="http://balance3e.com/random.js"></script>
+		<script type="text/javascript">
+			function BeholdTheTruth()
+			// Assumes: User enters a yes/no question into the box
+			// Results: Generates "randomized" response from a list of words within a randomness function when the image is clicked upon
+			{
+			magicResponse=RandomOneOf(['Yes... WAIT NO!', 'In due time.', 'My sources say no.', 'Definitely not.', 'Yes.', 'You will have to wait.', 'I have my doubts.', 'Outlook treacherous.', 'For shizzle.', 'Who knows?', 'Looking good!', 'Probably.', 'Are you kidding?', 'Go for it!', 'Don\'t bet on it.', 'Forget about it.', 'You\'re wasting your time.']);
+			document.getElementById('answerOutput').innerHTML=
+			'<p>The Magic 8 Ball says: <i>'+magicResponse+'</i></p>';
+			}
+		</script>
+	</head>
+	<body>
+		<center><h1>Magic 8-Ball(Mattel, Inc.)</h1>
+	<br>
+	<br>
+		<p>Enter a question below, then click the 8-ball to receive the truth:</p>
+		<p><input type="text" id="questionBox" size="40" value=""><p>
+		<p><img src="http://balance3e.com/Images/8ball.gif" onclick="BeholdTheTruth();"></p>
+		
+ 	<hr>
+ 		<div id="answerOutput"></div>
+	</body>
+</html>
